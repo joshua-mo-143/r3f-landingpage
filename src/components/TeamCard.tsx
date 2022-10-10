@@ -14,7 +14,7 @@ const TeamCard = (props: Props) => {
 </div>
   <h2 className="text-xl">Lorem - ipsum</h2>
   <hr className="mx-4 my-3 border-black"/>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat totam, ratione mollitia exercitationem debitis asperiores voluptate fugit assumenda incidunt consequuntur necessitatibus. Quidem minus animi possimus.</p>
+  <p className="text-md lg:text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat totam, ratione mollitia exercitationem debitis asperiores voluptate fugit assumenda incidunt consequuntur necessitatibus. Quidem minus animi possimus.</p>
   
     </div>
   )

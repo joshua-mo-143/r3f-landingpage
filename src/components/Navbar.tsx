@@ -4,12 +4,12 @@ type Props = {}
 
 const Navbar : FC = (props: Props) => {
   return (
-    <div className="h-12 w-full bg-blue-300 absolute z-50 shadow-md">
+    <div className="h-12 w-full bg-blue-300 fixed z-50 shadow-md inline-flex justify-between align-middle items-center">
+      <a href="/"><h1 className="text-center text-xl ml-5 font-bold hidden sm:visible">Spacenet</h1></a>
         <nav>
-            <ul className="flex justify-end flex-row gap-8 mr-3 items-center mt-2 text-xl">
-                <li>Home </li>
-                <li>Contact</li>
-                <li>Contact Us</li>
+            <ul className="flex justify-end flex-row gap-8 mr-3 items-center text-xl font-bold">
+                <a href="/"><li>Home </li></a>
+                <a href="#contact"><li>Contact Us</li></a>
             </ul>
         </nav>
     </div>

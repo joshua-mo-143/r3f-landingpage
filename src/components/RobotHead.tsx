@@ -37,16 +37,20 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials, animations } = useGLTF('/robotHead.glb') as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
 
-  const [action, setAction] = useState('Idle');
+  const robot = useRef();
+
+  useEffect(() => {
+    actions['Idle'].play();
+  }, [actions])
 
   useFrame(({ clock }) => {
-        group.current.rotation.y = clock.getElapsedTime()
+        robot.current.rotation.y = clock.getElapsedTime()
   })
 
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Scene" scale={window.innerWidth/2000}>
-        <group name="HeadArmature" position={[0, 0.01, 0]}>
+      <group name="Scene" scale={(window.innerWidth > 1000) ? window.innerWidth/2500 : window.innerWidth/1000}>
+        <group name="HeadArmature" position={[0, 0.01, 0]} ref={robot}>
           <primitive object={nodes.Bone} />
           <group name="Screen">
             <skinnedMesh name="Cube001" geometry={nodes.Cube001.geometry} material={materials.Glass} skeleton={nodes.Cube001.skeleton} />
