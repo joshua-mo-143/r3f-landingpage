@@ -9,6 +9,7 @@ import * as THREE from 'three'
 import React, { useRef, useEffect, useState } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
+import { useFrame } from '@react-three/fiber'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -38,13 +39,13 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 
   const [action, setAction] = useState('Idle');
 
-  useEffect(() => {
-    actions[action].play();
-  }, [actions, action])
+  useFrame(({ clock }) => {
+        group.current.rotation.y = clock.getElapsedTime()
+  })
 
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Scene" >
+      <group name="Scene" scale={window.innerWidth/2000}>
         <group name="HeadArmature" position={[0, 0.01, 0]}>
           <primitive object={nodes.Bone} />
           <group name="Screen">
