@@ -3,7 +3,7 @@ import {OrbitControls } from '@react-three/drei'
 import { Canvas, useFrame} from '@react-three/fiber'
 import { Model } from '../components/RobotHead'
 import Navbar from '../components/Navbar'
-import TeamCard from '../components/teamCard'
+import TeamCard from '../components/TeamCard'
 
 export const Meme = () => {
 
