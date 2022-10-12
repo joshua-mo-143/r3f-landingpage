@@ -5,7 +5,7 @@ import { Model } from '../components/RobotHead'
 import Navbar from '../components/Navbar'
 import TeamCard from '../components/TeamCard'
 import { useIntersection } from 'react-use'
-
+import BenefitCard from '../components/BenefitCard'
 export const Meme = () => {
 
   const DisableRender = () => useFrame(() => null, 1000)
@@ -46,7 +46,7 @@ const {ref, inView} = useInView();
     <directionalLight intensity={1} position={[1,1,1]}/>
     <Suspense fallback={null}>
     <Model/>
-
+    
     </Suspense>
   </Canvas>
     </div>
@@ -60,6 +60,12 @@ const {ref, inView} = useInView();
       Through our expertise, we can build the vision that you want for your business, as well as assisting with process automation,
       allowing your employees to focus on the things that matter.
         </p>
+        <h1 className="text-lg lg:text-5xl text-center pb-10 font-bold pt-10">Why Choose Us?</h1>
+        <div className="flex md:flex-row flex-col justify-center gap-8"> 
+      <BenefitCard/>
+      <BenefitCard/>
+      <BenefitCard/>
+      </div>
       </div>
       <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" className="transition duration-300 ease-in-out delay-150"><path d="M 0,400 C 0,400 0,133 0,133 C 73.58851674641147,118.4736842105263 147.17703349282294,103.94736842105262 252,109 C 356.82296650717706,114.05263157894738 492.88038277511964,138.6842105263158 594,155 C 695.1196172248804,171.3157894736842 761.3014354066986,179.31578947368422 862,161 C 962.6985645933014,142.68421052631578 1097.9138755980862,98.05263157894737 1200,89 C 1302.0861244019138,79.94736842105263 1371.043062200957,106.47368421052632 1440,133 C 1440,133 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="#9900ef" fill-opacity="0.53" className="transition-all duration-300 ease-in-out delay-150 path-0"></path><path d="M 0,400 C 0,400 0,266 0,266 C 108.21052631578945,296.6124401913876 216.4210526315789,327.22488038277515 323,311 C 429.5789473684211,294.77511961722485 534.5263157894736,231.71291866028707 616,220 C 697.4736842105264,208.28708133971293 755.4736842105265,247.9234449760766 846,267 C 936.5263157894735,286.0765550239234 1059.5789473684208,284.59330143540666 1164,281 C 1268.4210526315792,277.40669856459334 1354.2105263157896,271.7033492822967 1440,266 C 1440,266 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="#9900ef" fill-opacity="1" className="transition-all duration-300 ease-in-out delay-150 path-1"></path></svg>
     </section>
